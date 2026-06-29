@@ -212,6 +212,8 @@
     overflow: hidden;
     transition: border-color 0.3s;
     cursor: pointer;
+    text-decoration: none;
+    color: inherit;
   }
 
   .featured-card:hover { border-color: var(--accent); }
@@ -324,6 +326,8 @@
     display: flex;
     flex-direction: column;
     gap: 12px;
+    text-decoration: none;
+    color: inherit;
   }
 
   .post-card:hover { background: var(--gray-light); }
@@ -530,43 +534,43 @@
 
   <section class="featured" id="posts">
     <div class="section-label">Featured Post</div>
-    <div class="featured-card">
+    <a href="post-1.html" class="featured-card">
       <div class="featured-img">
         <div class="featured-img-graphic">₿</div>
         <div class="featured-img-icon">💻</div>
       </div>
       <div class="featured-body">
         <div>
-          <span class="post-tag">Freelancing</span>
-          <h2>How I Built a Client Website for Free — And Got Paid for It</h2>
-          <p>GitHub Pages, one HTML file, and a local business that needed a website. Here's the exact process I used to land my first paid project without spending a single rupee on tools.</p>
+          <span class="post-tag">Tutorial</span>
+          <h2>How to Host a Free Website on GitHub Pages in 10 Minutes</h2>
+          <p>Step by step guide to putting your HTML website online for free. No monthly fees, no hosting bills. I use this for all my projects.</p>
         </div>
         <div>
           <div class="post-meta">
             <span>June 2025</span>
             <span class="post-meta-dot">·</span>
-            <span>6 min read</span>
+            <span>8 min read</span>
           </div>
           <br>
           <span class="read-link">Read post →</span>
         </div>
       </div>
-    </div>
+    </a>
   </section>
 
   <section class="posts-section">
     <div class="section-label">All Posts</div>
     <div class="posts-grid">
 
-      <div class="post-card">
+      <a href="post-1.html" class="post-card">
         <div class="post-card-num">01</div>
-        <span class="post-tag">Hosting</span>
-        <h3>GitHub Pages vs Vercel vs Netlify — Best Free Hosting 2025</h3>
+        <span class="post-tag">Tutorial</span>
+        <h3>How to Host a Free Website on GitHub Pages in 10 Minutes</h3>
         <div class="post-card-bottom">
-          <span class="post-card-time">5 min</span>
+          <span class="post-card-time">8 min</span>
           <span class="post-card-arrow">→</span>
         </div>
-      </div>
+      </a>
 
       <div class="post-card">
         <div class="post-card-num">02</div>
