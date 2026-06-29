@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Host a Free Website on GitHub Pages — DevEarn</title>
+<meta name="description" content="Step by step guide to hosting your HTML website on GitHub Pages for free. No monthly fees, no hosting bills.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --black: #0a0a0a;
+    --white: #f5f4f0;
+    --accent: #00c896;
+    --accent-dim: #00c89620;
+    --gray: #999;
+    --gray-light: #1a1a1a;
+    --border: #222;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--black);
+    color: var(--white);
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    line-height: 1.8;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: inherit; text-decoration: none; }
+
+  /* NAV */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(10,10,10,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 56px;
+  }
+
+  .nav-logo {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 18px;
+    letter-spacing: -0.5px;
+  }
+
+  .nav-logo span { color: var(--accent); }
+
+  .nav-back {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--gray);
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+
+  .nav-back:hover { color: var(--white); }
+
+  /* HERO */
+  .post-hero {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 56px 24px 48px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .post-tag {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--accent);
+    background: var(--accent-dim);
+    border-radius: 4px;
+    padding: 4px 10px;
+    margin-bottom: 20px;
+  }
+
+  .post-hero h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(28px, 5vw, 48px);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -1.5px;
+    margin-bottom: 20px;
+  }
+
+  .post-hero h1 em {
+    font-style: normal;
+    color: var(--accent);
+  }
+
+  .post-meta {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-size: 13px;
+    color: var(--gray);
+    flex-wrap: wrap;
+  }
+
+  .post-meta-dot { opacity: 0.4; }
+
+  /* CONTENT */
+  .post-content {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 48px 24px 80px;
+  }
+
+  .post-content p {
+    color: #ccc;
+    margin-bottom: 24px;
+    font-size: 16px;
+    line-height: 1.85;
+  }
+
+  .post-content h2 {
+    font-family: 'Syne', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    margin: 48px 0 16px;
+    color: var(--white);
+  }
+
+  .post-content h3 {
+    font-family: 'Syne', sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    margin: 32px 0 12px;
+    color: var(--white);
+  }
+
+  /* STEPS */
+  .steps {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin: 32px 0;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .step {
+    display: grid;
+    grid-template-columns: 56px 1fr;
+    gap: 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .step:last-child { border-bottom: none; }
+
+  .step-num {
+    background: var(--gray-light);
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 20px 0 0;
+    font-family: 'Syne', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--accent);
+  }
+
+  .step-body {
+    padding: 20px 24px;
+    background: var(--black);
+  }
+
+  .step-body strong {
+    display: block;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 6px;
+  }
+
+  .step-body p {
+    font-size: 14px;
+    color: var(--gray);
+    margin: 0;
+    line-height: 1.6;
+  }
+
+  /* CODE */
+  .code-block {
+    background: var(--gray-light);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px 20px;
+    font-family: 'Courier New', monospace;
+    font-size: 13px;
+    color: var(--accent);
+    margin: 16px 0 24px;
+    overflow-x: auto;
+    letter-spacing: 0.3px;
+  }
+
+  /* CALLOUT */
+  .callout {
+    background: var(--gray-light);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    border-radius: 8px;
+    padding: 20px 24px;
+    margin: 32px 0;
+  }
+
+  .callout-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 8px;
+  }
+
+  .callout p {
+    font-size: 14px;
+    color: #ccc;
+    margin: 0;
+    line-height: 1.7;
+  }
+
+  /* ERROR BOX */
+  .errors {
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    margin: 24px 0;
+  }
+
+  .error-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 14px;
+  }
+
+  .error-row:last-child { border-bottom: none; }
+
+  .error-problem {
+    padding: 16px 20px;
+    color: #ff6b6b;
+    background: #1a0a0a;
+    border-right: 1px solid var(--border);
+  }
+
+  .error-fix {
+    padding: 16px 20px;
+    color: var(--accent);
+    background: #0a1a14;
+  }
+
+  .error-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    opacity: 0.6;
+    margin-bottom: 4px;
+  }
+
+  /* DIVIDER */
+  .divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 48px 0;
+  }
+
+  /* NEXT POSTS */
+  .next-posts {
+    margin-top: 64px;
+    padding-top: 40px;
+    border-top: 1px solid var(--border);
+  }
+
+  .next-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .next-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  .next-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .next-card {
+    background: var(--black);
+    padding: 24px;
+    transition: background 0.2s;
+    cursor: pointer;
+  }
+
+  .next-card:hover { background: var(--gray-light); }
+
+  .next-card-tag {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 10px;
+  }
+
+  .next-card h4 {
+    font-family: 'Syne', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 12px;
+  }
+
+  .next-card-arrow {
+    font-size: 14px;
+    color: var(--gray);
+    transition: color 0.2s, transform 0.2s;
+    display: inline-block;
+  }
+
+  .next-card:hover .next-card-arrow {
+    color: var(--accent);
+    transform: translateX(4px);
+  }
+
+  /* FOOTER */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 28px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  .footer-logo {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 15px;
+  }
+
+  .footer-logo span { color: var(--accent); }
+
+  footer p { font-size: 12px; color: var(--gray); }
+
+  /* MOBILE */
+  @media (max-width: 600px) {
+    .next-grid { grid-template-columns: 1fr; }
+    .error-row { grid-template-columns: 1fr; }
+    .error-problem { border-right: none; border-bottom: 1px solid var(--border); }
+    footer { flex-direction: column; gap: 8px; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">Dev<span>Earn</span></div>
+  <a href="index.html" class="nav-back">← Back to blog</a>
+</nav>
+
+<div class="post-hero">
+  <span class="post-tag">Tutorial</span>
+  <h1>How to Host a Free Website on <em>GitHub Pages</em> in 10 Minutes</h1>
+  <div class="post-meta">
+    <span>June 2025</span>
+    <span class="post-meta-dot">·</span>
+    <span>8 min read</span>
+    <span class="post-meta-dot">·</span>
+    <span>Free hosting</span>
+  </div>
+</div>
+
+<div class="post-content">
+
+  <p>Want to put your website online without paying a single rupee? GitHub Pages lets you host any HTML website completely free — no monthly fees, no billing, no credit card. Here is exactly how to do it, step by step.</p>
+
+  <p>I use this for all my client projects. Your site goes live at <strong>yourusername.github.io/sitename</strong> and works exactly like any other website.</p>
+
+  <h2>What You Need</h2>
+
+  <div class="callout">
+    <div class="callout-label">Requirements</div>
+    <p>A GitHub account (free to create) · An HTML file ready to upload · 10 minutes of your time. That's it.</p>
+  </div>
+
+  <h2>Step by Step</h2>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">01</div>
+      <div class="step-body">
+        <strong>Create a GitHub account</strong>
+        <p>Go to github.com and sign up. It's free. Use any email you have.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">02</div>
+      <div class="step-body">
+        <strong>Create a new repository</strong>
+        <p>Click the + button (top right) → New Repository. Give it a name like <strong>mywebsite</strong> or <strong>devearn</strong>. Set it to Public. Click Create.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">03</div>
+      <div class="step-body">
+        <strong>Upload your HTML file</strong>
+        <p>Click "Add file" → "Upload files". Drag your HTML file in. Important: the file must be named exactly <strong>index.html</strong> — not homepage.html, not website.html. Only index.html works.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">04</div>
+      <div class="step-body">
+        <strong>Commit the file</strong>
+        <p>Scroll down after uploading. Click the green "Commit changes" button. Your file is now saved in the repo.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">05</div>
+      <div class="step-body">
+        <strong>Enable GitHub Pages</strong>
+        <p>Go to Settings (top menu of your repo) → Pages (left sidebar). Under Branch, select <strong>main</strong> and <strong>/ (root)</strong>. Click Save.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">06</div>
+      <div class="step-body">
+        <strong>Wait 2 minutes</strong>
+        <p>GitHub needs 1-3 minutes to build your site. Go to the Actions tab — wait for the green tick to appear.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">07</div>
+      <div class="step-body">
+        <strong>Open your live site</strong>
+        <p>Your site is now live at:</p>
+        <div class="code-block">https://yourusername.github.io/reponame</div>
+        <p>Replace yourusername with your GitHub username and reponame with what you named your repo.</p>
+      </div>
+    </div>
+  </div>
+
+  <h2>Common Errors and Fixes</h2>
+
+  <p>Almost everyone hits one of these two problems. Here is how to fix them:</p>
+
+  <div class="errors">
+    <div class="error-row">
+      <div class="error-problem">
+        <div class="error-label">Problem</div>
+        404 — File not found
+      </div>
+      <div class="error-fix">
+        <div class="error-label">Fix</div>
+        Rename your file to exactly index.html
+      </div>
+    </div>
+    <div class="error-row">
+      <div class="error-problem">
+        <div class="error-label">Problem</div>
+        Site not updating after changes
+      </div>
+      <div class="error-fix">
+        <div class="error-label">Fix</div>
+        Wait 2-3 minutes and hard refresh (Ctrl + Shift + R)
+      </div>
+    </div>
+    <div class="error-row">
+      <div class="error-problem">
+        <div class="error-label">Problem</div>
+        Pages option not showing in Settings
+      </div>
+      <div class="error-fix">
+        <div class="error-label">Fix</div>
+        Make sure your repo is set to Public, not Private
+      </div>
+    </div>
+  </div>
+
+  <h2>What's Next</h2>
+
+  <p>Your site is live. Now you can share the link anywhere — WhatsApp, Instagram, LinkedIn, client emails. It works exactly like a normal website.</p>
+
+  <p>Want a custom domain like <strong>yourname.pk</strong> instead of the github.io link? You can connect one for around 500-800 PKR per year. I'll cover that in a future post.</p>
+
+  <div class="callout">
+    <div class="callout-label">Key Takeaway</div>
+    <p>GitHub Pages = free website hosting forever. No monthly bills. Every web developer should know this. Now you do.</p>
+  </div>
+
+  <div class="next-posts">
+    <div class="next-label">Read Next</div>
+    <div class="next-grid">
+      <div class="next-card">
+        <div class="next-card-tag">Clients</div>
+        <h4>How to Get Your First Freelance Web Dev Client in Pakistan</h4>
+        <span class="next-card-arrow">→</span>
+      </div>
+      <div class="next-card">
+        <div class="next-card-tag">Hosting</div>
+        <h4>GitHub Pages vs Vercel vs Netlify — Best Free Hosting 2025</h4>
+        <span class="next-card-arrow">→</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-logo">Dev<span>Earn</span></div>
+  <p>© 2025 · DevEarn</p>
+</footer>
+
+</body>
+</html>
