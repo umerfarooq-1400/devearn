@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Get Your First Freelance Web Dev Client in Pakistan — DevEarn</title>
+<meta name="description" content="Step by step guide to landing your first paying web development client in Pakistan, even with zero experience.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --black: #0a0a0a;
+    --white: #f5f4f0;
+    --accent: #00c896;
+    --accent-dim: #00c89620;
+    --gray: #999;
+    --gray-light: #1a1a1a;
+    --border: #222;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--black);
+    color: var(--white);
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    line-height: 1.8;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: inherit; text-decoration: none; }
+
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(10,10,10,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 56px;
+  }
+
+  .nav-logo {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 18px;
+    letter-spacing: -0.5px;
+  }
+
+  .nav-logo span { color: var(--accent); }
+
+  .nav-back {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--gray);
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+
+  .nav-back:hover { color: var(--white); }
+
+  .post-hero {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 56px 24px 48px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .post-tag {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--accent);
+    background: var(--accent-dim);
+    border-radius: 4px;
+    padding: 4px 10px;
+    margin-bottom: 20px;
+  }
+
+  .post-hero h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(28px, 5vw, 46px);
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -1.5px;
+    margin-bottom: 20px;
+  }
+
+  .post-hero h1 em {
+    font-style: normal;
+    color: var(--accent);
+  }
+
+  .post-meta {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-size: 13px;
+    color: var(--gray);
+    flex-wrap: wrap;
+  }
+
+  .post-meta-dot { opacity: 0.4; }
+
+  .post-content {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 48px 24px 80px;
+  }
+
+  .post-content p {
+    color: #ccc;
+    margin-bottom: 24px;
+    font-size: 16px;
+    line-height: 1.85;
+  }
+
+  .post-content h2 {
+    font-family: 'Syne', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    margin: 48px 0 16px;
+    color: var(--white);
+  }
+
+  .post-content h3 {
+    font-family: 'Syne', sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    margin: 32px 0 12px;
+    color: var(--white);
+  }
+
+  .steps {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin: 32px 0;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .step {
+    display: grid;
+    grid-template-columns: 56px 1fr;
+    gap: 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .step:last-child { border-bottom: none; }
+
+  .step-num {
+    background: var(--gray-light);
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 20px 0 0;
+    font-family: 'Syne', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--accent);
+  }
+
+  .step-body {
+    padding: 20px 24px;
+    background: var(--black);
+  }
+
+  .step-body strong {
+    display: block;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 6px;
+  }
+
+  .step-body p {
+    font-size: 14px;
+    color: var(--gray);
+    margin: 0;
+    line-height: 1.6;
+  }
+
+  .code-block {
+    background: var(--gray-light);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px 20px;
+    font-family: 'Courier New', monospace;
+    font-size: 13px;
+    color: var(--accent);
+    margin: 16px 0 24px;
+    overflow-x: auto;
+    letter-spacing: 0.3px;
+    white-space: pre-wrap;
+    line-height: 1.7;
+  }
+
+  .callout {
+    background: var(--gray-light);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    border-radius: 8px;
+    padding: 20px 24px;
+    margin: 32px 0;
+  }
+
+  .callout-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 8px;
+  }
+
+  .callout p {
+    font-size: 14px;
+    color: #ccc;
+    margin: 0;
+    line-height: 1.7;
+  }
+
+  .where-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    margin: 24px 0;
+  }
+
+  .where-card {
+    background: var(--black);
+    padding: 24px;
+  }
+
+  .where-card-icon {
+    font-size: 24px;
+    margin-bottom: 12px;
+  }
+
+  .where-card h4 {
+    font-family: 'Syne', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  .where-card p {
+    font-size: 13px;
+    color: var(--gray);
+    margin: 0;
+    line-height: 1.6;
+  }
+
+  .next-posts {
+    margin-top: 64px;
+    padding-top: 40px;
+    border-top: 1px solid var(--border);
+  }
+
+  .next-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .next-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  .next-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .next-card {
+    background: var(--black);
+    padding: 24px;
+    transition: background 0.2s;
+    cursor: pointer;
+  }
+
+  .next-card:hover { background: var(--gray-light); }
+
+  .next-card-tag {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 10px;
+  }
+
+  .next-card h4 {
+    font-family: 'Syne', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 12px;
+  }
+
+  .next-card-arrow {
+    font-size: 14px;
+    color: var(--gray);
+    transition: color 0.2s, transform 0.2s;
+    display: inline-block;
+  }
+
+  .next-card:hover .next-card-arrow {
+    color: var(--accent);
+    transform: translateX(4px);
+  }
+
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 28px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  .footer-logo {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 15px;
+  }
+
+  .footer-logo span { color: var(--accent); }
+
+  footer p { font-size: 12px; color: var(--gray); }
+
+  @media (max-width: 600px) {
+    .next-grid, .where-grid { grid-template-columns: 1fr; }
+    footer { flex-direction: column; gap: 8px; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">Dev<span>Earn</span></div>
+  <a href="index.html" class="nav-back">← Back to blog</a>
+</nav>
+
+<div class="post-hero">
+  <span class="post-tag">Clients</span>
+  <h1>How to Get Your First Freelance Web Dev <em>Client</em> in Pakistan</h1>
+  <div class="post-meta">
+    <span>June 2025</span>
+    <span class="post-meta-dot">·</span>
+    <span>7 min read</span>
+    <span class="post-meta-dot">·</span>
+    <span>Freelancing</span>
+  </div>
+</div>
+
+<div class="post-content">
+
+  <p>Getting your first client is the hardest part of freelancing. No portfolio, no reviews, no proof you can deliver. Here is exactly how to land your first paying client in Pakistan — even with zero experience.</p>
+
+  <p>I started the same way. No clients, no reputation, just the ability to build a website. Here is the path that actually works.</p>
+
+  <h2>Step 1 — Build Proof Before You Need It</h2>
+
+  <div class="callout">
+    <div class="callout-label">Important</div>
+    <p>Nobody hires a developer with zero portfolio. Build 2-3 sample websites first — even fake businesses work. This becomes your proof.</p>
+  </div>
+
+  <p>Pick a niche — restaurants, wedding venues, clothing brands — and build one complete website for an imaginary business in that niche. Make it look real and professional. This is what you show clients.</p>
+
+  <h2>Step 2 — Where to Find Clients</h2>
+
+  <div class="where-grid">
+    <div class="where-card">
+      <div class="where-card-icon">📱</div>
+      <h4>Facebook Business Pages</h4>
+      <p>Search local businesses without websites. DM them directly with a simple offer.</p>
+    </div>
+    <div class="where-card">
+      <div class="where-card-icon">💼</div>
+      <h4>Fiverr / Upwork</h4>
+      <p>Create a gig, apply to small jobs first to build reviews quickly.</p>
+    </div>
+    <div class="where-card">
+      <div class="where-card-icon">👥</div>
+      <h4>Facebook Groups</h4>
+      <p>Pakistani business owner groups often post "need a website" requests.</p>
+    </div>
+    <div class="where-card">
+      <div class="where-card-icon">🗣️</div>
+      <h4>Word of Mouth</h4>
+      <p>Tell everyone you know. Relatives, friends, local shop owners — someone always needs a site.</p>
+    </div>
+  </div>
+
+  <h2>Step 3 — The Outreach Message</h2>
+
+  <p>Don't write long messages. Keep it short, direct, and focused on their problem — not your skills.</p>
+
+  <div class="code-block">Hi [Name], I noticed [Business Name] doesn't 
+have a website yet. I build clean, professional 
+websites for local businesses — usually done 
+within 3-5 days. Would you be interested in 
+seeing a free sample design for your business?</div>
+
+  <p>This works because it's not asking for money upfront — it offers value first. Most businesses say yes to seeing a free sample.</p>
+
+  <h2>Step 4 — The Free Sample Trick</h2>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">01</div>
+      <div class="step-body">
+        <strong>They reply "yes, show me"</strong>
+        <p>Now you have permission to build something for their actual business.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">02</div>
+      <div class="step-body">
+        <strong>Build a quick homepage</strong>
+        <p>Use their real business name, logo if available, and content. Takes 2-3 hours using your templates.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">03</div>
+      <div class="step-body">
+        <strong>Send the live preview</strong>
+        <p>Host it free on GitHub Pages and send the link. Seeing their own business online converts almost every time.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">04</div>
+      <div class="step-body">
+        <strong>Ask for payment to finish</strong>
+        <p>"This is just the homepage — I can complete the full site with [features] for Rs [price]."</p>
+      </div>
+    </div>
+  </div>
+
+  <h2>Step 5 — Pricing for Your First Clients</h2>
+
+  <p>Don't undercharge completely, but stay realistic for your first 3-5 projects:</p>
+
+  <div class="code-block">Simple business website:     Rs 8,000 - 15,000
+E-commerce / booking site:   Rs 20,000 - 40,000
+With admin panel:            Rs 35,000 - 60,000</div>
+
+  <p>After 5-6 projects with good reviews, raise your prices. Your first clients are about building proof, not maximizing income.</p>
+
+  <div class="callout">
+    <div class="callout-label">Key Takeaway</div>
+    <p>The free sample method works because it removes risk for the client. They see their own website before paying anything. Use this for your first 5 clients, then switch to charging upfront once you have reviews.</p>
+  </div>
+
+  <div class="next-posts">
+    <div class="next-label">Read Next</div>
+    <div class="next-grid">
+      <div class="next-card">
+        <div class="next-card-tag">Tutorial</div>
+        <h4>How to Host a Free Website on GitHub Pages in 10 Minutes</h4>
+        <span class="next-card-arrow">→</span>
+      </div>
+      <div class="next-card">
+        <div class="next-card-tag">Coming Soon</div>
+        <h4>5 Websites You Can Build in One Day and Sell</h4>
+        <span class="next-card-arrow">⏳</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-logo">Dev<span>Earn</span></div>
+  <p>© 2025 · DevEarn</p>
+</footer>
+
+</body>
+</html>
