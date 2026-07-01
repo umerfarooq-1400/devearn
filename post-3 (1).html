@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>5 Websites You Can Build in One Day and Sell — DevEarn</title>
+<meta name="description" content="5 real website types you can build in a single day and sell to Pakistani businesses. Templates, pricing and where to find buyers.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --black: #0a0a0a;
+    --white: #f5f4f0;
+    --accent: #00c896;
+    --accent-dim: #00c89620;
+    --gray: #999;
+    --gray-light: #1a1a1a;
+    --border: #222;
+  }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--black);
+    color: var(--white);
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    line-height: 1.8;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(10,10,10,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 56px;
+  }
+  .nav-logo { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 18px; letter-spacing: -0.5px; }
+  .nav-logo span { color: var(--accent); }
+  .nav-back { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--gray); font-weight: 500; transition: color 0.2s; }
+  .nav-back:hover { color: var(--white); }
+  .post-hero { max-width: 720px; margin: 0 auto; padding: 56px 24px 48px; border-bottom: 1px solid var(--border); }
+  .post-tag { display: inline-block; font-size: 10px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: var(--accent); background: var(--accent-dim); border-radius: 4px; padding: 4px 10px; margin-bottom: 20px; }
+  .post-hero h1 { font-family: 'Syne', sans-serif; font-size: clamp(28px, 5vw, 46px); font-weight: 800; line-height: 1.15; letter-spacing: -1.5px; margin-bottom: 20px; }
+  .post-hero h1 em { font-style: normal; color: var(--accent); }
+  .post-meta { display: flex; align-items: center; gap: 16px; font-size: 13px; color: var(--gray); flex-wrap: wrap; }
+  .post-meta-dot { opacity: 0.4; }
+  .post-content { max-width: 720px; margin: 0 auto; padding: 48px 24px 80px; }
+  .post-content p { color: #ccc; margin-bottom: 24px; font-size: 16px; line-height: 1.85; }
+  .post-content h2 { font-family: 'Syne', sans-serif; font-size: 22px; font-weight: 700; letter-spacing: -0.5px; margin: 48px 0 16px; color: var(--white); }
+
+  /* WEBSITE CARDS */
+  .site-card {
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    margin: 32px 0;
+  }
+  .site-card-header {
+    background: var(--gray-light);
+    padding: 20px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--border);
+  }
+  .site-card-left { display: flex; align-items: center; gap: 16px; }
+  .site-num {
+    font-family: 'Syne', sans-serif;
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--accent);
+    opacity: 0.3;
+    line-height: 1;
+  }
+  .site-card-left h3 { font-family: 'Syne', sans-serif; font-size: 18px; font-weight: 700; letter-spacing: -0.3px; }
+  .site-price {
+    font-family: 'Syne', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--accent);
+    white-space: nowrap;
+  }
+  .site-card-body { padding: 24px; background: var(--black); }
+  .site-card-body p { color: #ccc; font-size: 14px; margin-bottom: 16px; line-height: 1.7; }
+  .site-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 16px;
+  }
+  .site-detail {
+    background: var(--gray-light);
+    border-radius: 8px;
+    padding: 12px 16px;
+  }
+  .site-detail-label { font-size: 10px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: var(--gray); margin-bottom: 4px; }
+  .site-detail-value { font-size: 13px; font-weight: 500; color: var(--white); }
+
+  .callout { background: var(--gray-light); border: 1px solid var(--border); border-left: 3px solid var(--accent); border-radius: 8px; padding: 20px 24px; margin: 32px 0; }
+  .callout-label { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
+  .callout p { font-size: 14px; color: #ccc; margin: 0; line-height: 1.7; }
+
+  .next-posts { margin-top: 64px; padding-top: 40px; border-top: 1px solid var(--border); }
+  .next-label { font-size: 11px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--accent); margin-bottom: 24px; display: flex; align-items: center; gap: 10px; }
+  .next-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+  .next-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+  .next-card { background: var(--black); padding: 24px; transition: background 0.2s; cursor: pointer; }
+  .next-card:hover { background: var(--gray-light); }
+  .next-card-tag { font-size: 10px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; }
+  .next-card h4 { font-family: 'Syne', sans-serif; font-size: 15px; font-weight: 700; line-height: 1.3; margin-bottom: 12px; }
+  .next-card-arrow { font-size: 14px; color: var(--gray); transition: color 0.2s, transform 0.2s; display: inline-block; }
+  .next-card:hover .next-card-arrow { color: var(--accent); transform: translateX(4px); }
+
+  footer { border-top: 1px solid var(--border); padding: 28px 24px; display: flex; align-items: center; justify-content: space-between; max-width: 720px; margin: 0 auto; }
+  .footer-logo { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 15px; }
+  .footer-logo span { color: var(--accent); }
+  footer p { font-size: 12px; color: var(--gray); }
+
+  @media (max-width: 600px) {
+    .next-grid { grid-template-columns: 1fr; }
+    .site-details { grid-template-columns: 1fr; }
+    .site-card-header { flex-direction: column; align-items: flex-start; gap: 8px; }
+    footer { flex-direction: column; gap: 8px; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">Dev<span>Earn</span></div>
+  <a href="index.html" class="nav-back">← Back to blog</a>
+</nav>
+
+<div class="post-hero">
+  <span class="post-tag">Ideas</span>
+  <h1>5 Websites You Can Build in <em>One Day</em> and Sell</h1>
+  <div class="post-meta">
+    <span>July 2025</span>
+    <span class="post-meta-dot">·</span>
+    <span>6 min read</span>
+    <span class="post-meta-dot">·</span>
+    <span>Business Ideas</span>
+  </div>
+</div>
+
+<div class="post-content">
+
+  <p>You don't need weeks to build a sellable website. Most small businesses in Pakistan need simple, clean sites that communicate what they do and how to contact them. That's it. Here are 5 types you can build in a single day — and sell for Rs 8,000 to Rs 25,000 each.</p>
+
+  <div class="callout">
+    <div class="callout-label">How This Works</div>
+    <p>Build one great template for each category. Then resell it to different businesses in that niche — just swap logo, colors, and content each time. One day of work becomes a repeatable income stream.</p>
+  </div>
+
+  <h2>The 5 Website Types</h2>
+
+  <!-- CARD 1 -->
+  <div class="site-card">
+    <div class="site-card-header">
+      <div class="site-card-left">
+        <div class="site-num">01</div>
+        <h3>Restaurant / Cafe Website</h3>
+      </div>
+      <div class="site-price">Rs 8,000 – 15,000</div>
+    </div>
+    <div class="site-card-body">
+      <p>Every restaurant, dhaba, and cafe in Pakistan needs an online presence. Most have a Facebook page but no real website. A simple site with their menu, location, and contact number is enough to charge good money.</p>
+      <div class="site-details">
+        <div class="site-detail">
+          <div class="site-detail-label">Build Time</div>
+          <div class="site-detail-value">3–5 hours</div>
+        </div>
+        <div class="site-detail">
+          <div class="site-detail-label">Pages Needed</div>
+          <div class="site-detail-value">Home, Menu, Contact</div>
+        </div>
+        <div class="site-detail">
+          <div class="site-detail-label">Where to Find Clients</div>
+          <div class="site-detail-value">Local cafes, food delivery pages</div>
+        </div>
+        <div class="site-detail">
+          <div class="site-detail-label">Upsell Opportunity</div>
+          <div class="site-detail-value">Online ordering (+Rs 10,000)</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CARD 2 -->
+  <div class="site-card">
+    <div class="site-card-header">
+      <div class="site-card-left">
+        <div class="site-num">02</div>
+        <h3>Clothing Brand / Boutique</h3>
+      </div>
+      <div class="site-price">Rs 12,000 – 25,000</div>
+    </div>
+    <div class="site-card-body">
+      <p>Karachi and Lahore are full of small clothing brands selling on Instagram. They desperately need a proper website to look legitimate and stop losing sales to competitors who have one. This is a goldmine niche.</p>
+      <div class="site-details">
+        <div class="site-detail">
+          <div class="site-detail-label">Build Time</div>
+          <div class="site-detail-value">4–6 hours</div>
+        </div>
+        <div class="site-detail">
+          <div class="site-detail-label">Pages Needed</div>
+          <div class="site-detail-value">Home, Shop, About, Contact</div>
+        </div>
+        <div class="site-detail">
+          <div class="site-detail-label">Where to Find Clients</div>
+          <div class="site-detail-value">Instagram clothing pages, Facebook shops</div>
+        </div>
+        <div class="site-detail">
+          <div class="site-detail-label">Upsell Opportunity</div>
+          <div class="site-detail-value">WhatsApp checkout integration</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CARD 3 -->
+  <div class="site-card">
+    <div class="site-card-header">
+      <div class="site-card-left">
+        <div class="site-num">03</div>
+        <h3>Doctor / Clinic Website</h3>
+      </div>
+      <div class="site-price">Rs 15,000 – 30,000</div>
+    </div>
+    <div class="site-card-body">
+      <p>Doctors and clinics are high-value clients who pay well and rarely negotiate on price. They need a professional looking site that shows services, timings, and an appointment contact. They also refer you to other doctors — one client becomes five.</p>
+      <div class="site-details">
+        <div class="site-detail">
+          <div class="site-detail-label">Build Time</div>
+          <div class="site-detail-value">4–5 hours</div>
+        </div>
+        <div class="site-detail">
+          <div class="site-detail-label">Pages Needed</div>
+          <div class="site-detail-value">Home, Services, Timings, Contact</div>
+        </div>
+        <div class="site-detail">
+          <div class="site-detail-label">Where to Find Clients</div>
+          <div class="site-detail-value">Local clinics, hospital directories</div>
+        </div>
+        <div class="site-detail">
+          <div class="site-detail-label">Upsell Opportunity</div>
+          <div class="site-detail-value">Appointment booking form</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CARD 4 -->
+  <div class="site-card">
+    <div class="site-card-header">
+      <div class="site-card-left">
+        <div class="site-num">04</div>
+        <h3>Wedding / Events Photographer</h3>
+      </div>
+      <div class="site-price">Rs 10,000 – 20,000</div>
+    </div>
+    <div class="site-card-body">
+      <p>Photographers need a portfolio website to show their work and attract bookings. Most are using Instagram which doesn't look professional for high paying clients. A clean portfolio site with a contact form is exactly what they need.</p>
+      <div class="site-details">
+        <div class="site-detail">
+          <div class="site-detail-label">Build Time</div>
+          <div class="site-detail-value">3–4 hours</div>
+        </div>
+        <div class="site-detail">
+          <div class="site-detail-label">Pages Needed</div>
+          <div class="site-detail-value">Home, Portfolio, Packages, Contact</div>
+        </div>
+        <div class="site-detail">
+          <div class="site-detail-label">Where to Find Clients</div>
+          <div class="site-detail-value">Instagram photographers, Facebook events groups</div>
+        </div>
+        <div class="site-detail">
+          <div class="site-detail-label">Upsell Opportunity</div>
+          <div class="site-detail-value">Gallery with password protection</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CARD 5 -->
+  <div class="site-card">
+    <div class="site-card-header">
+      <div class="site-card-left">
+        <div class="site-num">05</div>
+        <h3>Real Estate Agent / Property</h3>
+      </div>
+      <div class="site-price">Rs 20,000 – 40,000</div>
+    </div>
+    <div class="site-card-body">
+      <p>Real estate agents in Pakistan pay the most for websites because their clients are high value. A property listing site with WhatsApp contact integration is extremely easy to build and commands premium pricing because the agent sees it as an investment not an expense.</p>
+      <div class="site-details">
+        <div class="site-detail">
+          <div class="site-detail-label">Build Time</div>
+          <div class="site-detail-value">5–7 hours</div>
+        </div>
+        <div class="site-detail">
+          <div class="site-detail-label">Pages Needed</div>
+          <div class="site-detail-value">Home, Listings, About, Contact</div>
+        </div>
+        <div class="site-detail">
+          <div class="site-detail-label">Where to Find Clients</div>
+          <div class="site-detail-value">Zameen.com agents, local property offices</div>
+        </div>
+        <div class="site-detail">
+          <div class="site-detail-label">Upsell Opportunity</div>
+          <div class="site-detail-value">Monthly maintenance Rs 2,000/month</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h2>The Strategy</h2>
+
+  <p>Don't try to sell all 5 at once. Pick one niche, build one perfect template for it, then approach 10 businesses in that niche with the same offer. Once you close 2-3 clients in one niche you have reviews, a refined template, and a clear pitch.</p>
+
+  <p>Then move to the next niche and repeat.</p>
+
+  <div class="callout">
+    <div class="callout-label">Quick Math</div>
+    <p>If you close just 2 restaurant websites per month at Rs 12,000 each — that's Rs 24,000 extra income. Part time, from home, using free tools. That's a realistic starting point for any Pakistani web developer.</p>
+  </div>
+
+  <div class="next-posts">
+    <div class="next-label">Read Next</div>
+    <div class="next-grid">
+      <a href="post-2.html" class="next-card">
+        <div class="next-card-tag">Clients</div>
+        <h4>How to Get Your First Freelance Web Dev Client in Pakistan</h4>
+        <span class="next-card-arrow">→</span>
+      </a>
+      <div class="next-card">
+        <div class="next-card-tag">Coming Soon</div>
+        <h4>How to Make a Restaurant Website in 1 Hour (Free)</h4>
+        <span class="next-card-arrow">⏳</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-logo">Dev<span>Earn</span></div>
+  <p>© 2025 · DevEarn</p>
+</footer>
+
+</body>
+</html>
